@@ -1,0 +1,20 @@
+.on1 {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+}
+.off1 {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+.on2 {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+.off2 {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
