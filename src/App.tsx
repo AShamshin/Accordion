@@ -1,38 +1,44 @@
 import React, { useState } from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
-import { Rating } from './components/Rating/Rating';
+import { Rating, RatingValueType } from './components/Rating/Rating';
 import './App.css';
 import { OnOf } from './components/OnOf/OnOf';
-import UncontrolledAccordion from './components/Accordion/SelfControlledAccordion';
+import UncontrolledAccordion from './components/Accordion/UnControlledAccordion';
 import UncontrolledRating from './components/Rating/UncontrolledRating';
-
-export type AType = boolean;
+import { OnOfCopy } from './components/OnOf/OnOf copy';
 
 function App() {
-  const [a, setA] = useState<AType>(false);
-  const halder = (a: any) => {
-    setA(a);
-  };
+  let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+  const [on, iiiOn] = useState<any>(false);
 
   return (
     <div className='App'>
+      {/* <OnOfCopy on={on} iiiOn={iiiOn} />
+      {on.toString()} */}
+
+      {/* <OnOf onChange={iiiOn} />
+      {on.toString()} */}
+
       {/* <PageTitle title={'This is APP component'} />
-      <PageTitle title={'My friends'} />
-      Article 1
-      <Rating value={3} /> */}
-      {/* <Accordion titleValue={'Menu'} collapsed={true} />
-      <Accordion titleValue={'Users'} collapsed={false} /> */}
+      <PageTitle title={'My friends'} /> */}
+
+      {/* <Rating value={ratingValue} onClick={setRatingValue} /> */}
+
+      {/* <Accordion
+        titleValue={'Menu'}
+        onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+        collapsed={accordionCollapsed}
+      /> */}
+
+      {/* <Accordion titleValue={'Users'} collapsed={false} /> */}
+
       <UncontrolledAccordion titleValue={'Menu'} />
-      <UncontrolledAccordion titleValue={'Users'} />
-      <UncontrolledRating />
-      {/* <Rating value={0} />
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} /> */}
-      {/* <OnOf /> */}
+
+      {/* <UncontrolledAccordion titleValue={'Users'} /> */}
+
+      {/* <UncontrolledRating /> */}
     </div>
   );
 }
