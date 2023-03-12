@@ -13,6 +13,10 @@ function App() {
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
   const [on, iiiOn] = useState<any>(false);
 
+  const onClickCallback = (value: any) => {
+    alert('Click ' + value);
+  };
+
   return (
     <div className='App'>
       {/* <OnOfCopy on={on} iiiOn={iiiOn} />
@@ -32,9 +36,20 @@ function App() {
         collapsed={accordionCollapsed}
       /> */}
 
-      {/* <Accordion titleValue={'Users'} collapsed={false} /> */}
+      <Accordion
+        titleValue={'Users'}
+        collapsed={accordionCollapsed}
+        onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+        onClick={onClickCallback}
+        items={[
+          { title: 'Dimych', value: 1 },
+          { title: 'Valera', value: 2 },
+          { title: 'Artem', value: 3 },
+          { title: 'Viktor', value: 4 },
+        ]}
+      />
 
-      <UncontrolledAccordion titleValue={'Menu'} />
+      {/* <UncontrolledAccordion titleValue={'Menu'} /> */}
 
       {/* <UncontrolledAccordion titleValue={'Users'} /> */}
 
