@@ -52,7 +52,7 @@ function App() {
         ]}
       /> */}
       <>
-        <Select
+        {/* <Select
           value={value}
           onChange={onChangeCallback}
           items={[
@@ -60,7 +60,7 @@ function App() {
             { title: 'London', value: '2' },
             { title: 'Paris', value: '3' },
           ]}
-        />
+        /> */}
         {/* <Select
           onChange={onChangeCallback}
           value={value}
@@ -74,7 +74,7 @@ function App() {
 
       {/* <UncontrolledAccordion titleValue={'Menu'} /> */}
 
-      {/* <UncontrolledAccordion titleValue={'Users'} /> */}
+      <UncontrolledAccordion titleValue={'Users'} />
 
       {/* <UncontrolledRating /> */}
     </div>
