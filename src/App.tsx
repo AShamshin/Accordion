@@ -7,14 +7,17 @@ import { OnOf } from './components/OnOf/OnOf';
 import UncontrolledAccordion from './components/Accordion/UnControlledAccordion';
 import UncontrolledRating from './components/Rating/UncontrolledRating';
 import { OnOfCopy } from './components/OnOf/OnOf copy';
+import { Select } from './components/Select/Select';
 
 function App() {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
   const [on, iiiOn] = useState<any>(false);
 
-  const onClickCallback = (value: any) => {
-    alert('Click ' + value);
+  let [value, setValue] = useState<string>('1');
+
+  const onChangeCallback = (value: any) => {
+    setValue(value);
   };
 
   return (
@@ -36,7 +39,7 @@ function App() {
         collapsed={accordionCollapsed}
       /> */}
 
-      <Accordion
+      {/* <Accordion
         titleValue={'Users'}
         collapsed={accordionCollapsed}
         onChange={() => setAccordionCollapsed(!accordionCollapsed)}
@@ -47,7 +50,27 @@ function App() {
           { title: 'Artem', value: 3 },
           { title: 'Viktor', value: 4 },
         ]}
-      />
+      /> */}
+      <>
+        <Select
+          value={value}
+          onChange={onChangeCallback}
+          items={[
+            { title: 'Moscow', value: '1' },
+            { title: 'London', value: '2' },
+            { title: 'Paris', value: '3' },
+          ]}
+        />
+        {/* <Select
+          onChange={onChangeCallback}
+          value={value}
+          items={[
+            { title: 'Moscow', value: '1' },
+            { title: 'London', value: '2' },
+            { title: 'Paris', value: '3' },
+          ]}
+        /> */}
+      </>
 
       {/* <UncontrolledAccordion titleValue={'Menu'} /> */}
 
