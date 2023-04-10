@@ -1,5 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
-
 type ItemType = {
   title: string;
   value: any;
@@ -13,7 +11,7 @@ type AccordionPropsType = {
   onClick: (value: any) => void;
 };
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
   return (
     <div>
       <AccordionTitle title={props.titleValue} onChange={props.onChange} />

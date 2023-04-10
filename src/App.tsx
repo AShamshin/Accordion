@@ -8,48 +8,18 @@ import UncontrolledAccordion from './components/Accordion/UnControlledAccordion'
 import UncontrolledRating from './components/Rating/UncontrolledRating';
 import { OnOfCopy } from './components/OnOf/OnOf copy';
 import { Select } from './components/Select/Select';
+import { Example } from './components/memo/UseMemo';
+import { Example1 } from './components/memo/ReactMemo';
+import { Example2 } from './components/memo/UseState';
 
 function App() {
-  const NewMessagesCounter = (props: { count: number }) => {
-    return <div>{props.count}</div>;
-  };
-  const UsersSecret = (props: { users: Array<string> }) => {
-    return (
-      <div>
-        {props.users.map((u, i) => (
-          <div key={i}>{u}</div>
-        ))}
-      </div>
-    );
-  };
-
-  const Users = React.memo(UsersSecret);
-
-  const Example1 = () => {
-    const [counter, setCounter] = useState(0);
-    const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem']);
-    return (
-      <>
-        <button
-          onClick={() => {
-            setCounter(counter + 1);
-          }}
-        >
-          +
-        </button>
-        <NewMessagesCounter count={counter} />
-        <Users users={['Dimych', 'Valera', 'Artem']} />
-      </>
-    );
-  };
-
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
   const [on, iiiOn] = useState<any>(false);
 
   let [value, setValue] = useState<string>('1');
 
-  const onChangeCallback = (value: any) => {
+  const onClickCallback = (value: any) => {
     setValue(value);
   };
 
@@ -66,6 +36,8 @@ function App() {
         titleValue={'Menu'}
         onChange={() => setAccordionCollapsed(!accordionCollapsed)}
         collapsed={accordionCollapsed}
+        onClick={onClickCallback}
+        items={[]}
       /> */}
       {/* <Accordion
         titleValue={'Users'}
@@ -102,7 +74,9 @@ function App() {
       {/* <UncontrolledAccordion titleValue={'Menu'} /> */}
       {/* <UncontrolledAccordion titleValue={'Users'} /> */}
       {/* <UncontrolledRating /> */}
-      <Example1 />
+      {/* <Example1 /> */}
+      {/* <Example /> */}
+      <Example2 />
     </div>
   );
 }
