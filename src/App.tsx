@@ -11,7 +11,7 @@ import { Select } from './components/Select/Select';
 import { Example } from './components/memo/UseMemo';
 import { Example1 } from './components/memo/ReactMemo';
 import { Example2 } from './components/memo/UseState';
-import { SimpleExample } from './components/memo/UseEffect';
+import { SetTimeoutExample, SimpleExample } from './components/memo/UseEffect';
 
 function App() {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -78,7 +78,8 @@ function App() {
       {/* <Example1 /> */}
       {/* <Example /> */}
       {/* <Example2 /> */}
-      <SimpleExample />
+      {/* <SimpleExample /> */}
+      <SetTimeoutExample />
     </div>
   );
 }
