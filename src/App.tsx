@@ -11,6 +11,7 @@ import { Select } from './components/Select/Select';
 import { Example } from './components/memo/UseMemo';
 import { Example1 } from './components/memo/ReactMemo';
 import { Example2 } from './components/memo/UseState';
+import { SimpleExample } from './components/memo/UseEffect';
 
 function App() {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -76,7 +77,8 @@ function App() {
       {/* <UncontrolledRating /> */}
       {/* <Example1 /> */}
       {/* <Example /> */}
-      <Example2 />
+      {/* <Example2 /> */}
+      <SimpleExample />
     </div>
   );
 }
