@@ -12,6 +12,7 @@ import { Example } from './components/memo/UseMemo';
 import { Example1 } from './components/memo/ReactMemo';
 import { Example2 } from './components/memo/UseState';
 import { SetTimeoutExample, SimpleExample } from './components/memo/UseEffect';
+import { Clock } from './components/Clock/Clock';
 
 function App() {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -79,7 +80,9 @@ function App() {
       {/* <Example /> */}
       {/* <Example2 /> */}
       {/* <SimpleExample /> */}
-      <SetTimeoutExample />
+      {/* <SetTimeoutExample /> */}
+      <Clock mode={'analog'} />
+      <Clock mode={'digital'} />
     </div>
   );
 }
