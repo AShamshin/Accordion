@@ -29,16 +29,19 @@ export const SimpleExample = () => {
   );
 };
 
-export const SetTimeoutExample = () => {
+export const SetIntervalExample = () => {
   const [fake, setFake] = useState(1);
   const [counter, setCounter] = useState(1);
 
   console.log('SetTimeoutExample');
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setCounter((state) => state + 1);
     }, 2000);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return (
